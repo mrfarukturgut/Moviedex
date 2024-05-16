@@ -13,6 +13,7 @@
 		EBE54D632BF6BF3000D0C696 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBE54D612BF6BF3000D0C696 /* Main.storyboard */; };
 		EBE54D652BF6BF3100D0C696 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBE54D642BF6BF3100D0C696 /* Assets.xcassets */; };
 		EBE54D682BF6BF3100D0C696 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBE54D662BF6BF3100D0C696 /* LaunchScreen.storyboard */; };
+		EBE54D712BF6BFCE00D0C696 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EBE54D702BF6BFCE00D0C696 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBE54D712BF6BFCE00D0C696 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +85,9 @@
 			dependencies = (
 			);
 			name = Moviedex;
+			packageProductDependencies = (
+				EBE54D702BF6BFCE00D0C696 /* SnapKit */,
+			);
 			productName = Moviedex;
 			productReference = EBE54D582BF6BF3000D0C696 /* Moviedex.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +116,9 @@
 				Base,
 			);
 			mainGroup = EBE54D4F2BF6BF3000D0C696;
+			packageReferences = (
+				EBE54D6F2BF6BFCE00D0C696 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = EBE54D592BF6BF3000D0C696 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -358,6 +366,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EBE54D6F2BF6BFCE00D0C696 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EBE54D702BF6BFCE00D0C696 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EBE54D6F2BF6BFCE00D0C696 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EBE54D502BF6BF3000D0C696 /* Project object */;
 }
