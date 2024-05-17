@@ -14,5 +14,16 @@ class ListViewController: UIViewController {
     override func loadView() {
         view = listView
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let provider = APIProvider()
+        
+        
+        provider.search(by: "test", page: 1) { result in
+            print(result)
+        }
+    }
 
 }

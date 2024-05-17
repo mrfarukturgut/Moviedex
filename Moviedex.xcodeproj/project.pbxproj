@@ -28,6 +28,7 @@
 		EBE54D952BF77CCF00D0C696 /* VerticalListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE54D942BF77CCF00D0C696 /* VerticalListItemCell.swift */; };
 		EBE54D972BF77CE800D0C696 /* HorizontalListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE54D962BF77CE800D0C696 /* HorizontalListItemCell.swift */; };
 		EBE54D992BF77E4600D0C696 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE54D982BF77E4600D0C696 /* Content.swift */; };
+		EBE54D9C2BF77FA700D0C696 /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE54D9B2BF77FA700D0C696 /* APIProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		EBE54D942BF77CCF00D0C696 /* VerticalListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalListItemCell.swift; sourceTree = "<group>"; };
 		EBE54D962BF77CE800D0C696 /* HorizontalListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalListItemCell.swift; sourceTree = "<group>"; };
 		EBE54D982BF77E4600D0C696 /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
+		EBE54D9B2BF77FA700D0C696 /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 		EBE54D5A2BF6BF3000D0C696 /* Moviedex */ = {
 			isa = PBXGroup;
 			children = (
+				EBE54D9A2BF77F9E00D0C696 /* Provider */,
 				EBE54D762BF6C40E00D0C696 /* Utils */,
 				EBE54D722BF6C19500D0C696 /* Views */,
 				EBE54D852BF77C3D00D0C696 /* ViewModels */,
@@ -165,6 +168,14 @@
 				EBE54D982BF77E4600D0C696 /* Content.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		EBE54D9A2BF77F9E00D0C696 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				EBE54D9B2BF77FA700D0C696 /* APIProvider.swift */,
+			);
+			path = Provider;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,6 +258,7 @@
 				EBE54D8F2BF77C9100D0C696 /* HorizontalListViewModel.swift in Sources */,
 				EBE54D602BF6BF3000D0C696 /* ListViewController.swift in Sources */,
 				EBE54D932BF77CC100D0C696 /* VerticalListItemCellModel.swift in Sources */,
+				EBE54D9C2BF77FA700D0C696 /* APIProvider.swift in Sources */,
 				EBE54D7D2BF6D28400D0C696 /* HorizontalListView.swift in Sources */,
 				EBE54D992BF77E4600D0C696 /* Content.swift in Sources */,
 				EBE54D5C2BF6BF3000D0C696 /* AppDelegate.swift in Sources */,
