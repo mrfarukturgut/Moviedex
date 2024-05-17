@@ -14,6 +14,11 @@
 		EBE54D712BF6BFCE00D0C696 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EBE54D702BF6BFCE00D0C696 /* SnapKit */; };
 		EBE54D752BF6C1B300D0C696 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE54D742BF6C1B300D0C696 /* ListView.swift */; };
 		EBE54D792BF6C42800D0C696 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE54D782BF6C42800D0C696 /* UIView+Extensions.swift */; };
+		EBE54D7B2BF6D26E00D0C696 /* VerticalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE54D7A2BF6D26E00D0C696 /* VerticalListView.swift */; };
+		EBE54D7D2BF6D28400D0C696 /* HorizontalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE54D7C2BF6D28400D0C696 /* HorizontalListView.swift */; };
+		EBE54D802BF7608A00D0C696 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE54D7F2BF7608A00D0C696 /* Reusable.swift */; };
+		EBE54D822BF7610300D0C696 /* UICollectionView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE54D812BF7610300D0C696 /* UICollectionView+Reusable.swift */; };
+		EBE54D842BF7618F00D0C696 /* UITableView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE54D832BF7618F00D0C696 /* UITableView+Reusable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +30,11 @@
 		EBE54D692BF6BF3100D0C696 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBE54D742BF6C1B300D0C696 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		EBE54D782BF6C42800D0C696 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		EBE54D7A2BF6D26E00D0C696 /* VerticalListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalListView.swift; sourceTree = "<group>"; };
+		EBE54D7C2BF6D28400D0C696 /* HorizontalListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalListView.swift; sourceTree = "<group>"; };
+		EBE54D7F2BF7608A00D0C696 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		EBE54D812BF7610300D0C696 /* UICollectionView+Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Reusable.swift"; sourceTree = "<group>"; };
+		EBE54D832BF7618F00D0C696 /* UITableView+Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Reusable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +91,8 @@
 			children = (
 				EBE54D5F2BF6BF3000D0C696 /* ListViewController.swift */,
 				EBE54D742BF6C1B300D0C696 /* ListView.swift */,
+				EBE54D7A2BF6D26E00D0C696 /* VerticalListView.swift */,
+				EBE54D7C2BF6D28400D0C696 /* HorizontalListView.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -88,6 +100,7 @@
 		EBE54D762BF6C40E00D0C696 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				EBE54D7E2BF7608300D0C696 /* Reusable */,
 				EBE54D772BF6C41800D0C696 /* Extensions */,
 			);
 			path = Utils;
@@ -97,8 +110,18 @@
 			isa = PBXGroup;
 			children = (
 				EBE54D782BF6C42800D0C696 /* UIView+Extensions.swift */,
+				EBE54D812BF7610300D0C696 /* UICollectionView+Reusable.swift */,
+				EBE54D832BF7618F00D0C696 /* UITableView+Reusable.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EBE54D7E2BF7608300D0C696 /* Reusable */ = {
+			isa = PBXGroup;
+			children = (
+				EBE54D7F2BF7608A00D0C696 /* Reusable.swift */,
+			);
+			path = Reusable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,10 +200,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBE54D7B2BF6D26E00D0C696 /* VerticalListView.swift in Sources */,
 				EBE54D602BF6BF3000D0C696 /* ListViewController.swift in Sources */,
+				EBE54D7D2BF6D28400D0C696 /* HorizontalListView.swift in Sources */,
 				EBE54D5C2BF6BF3000D0C696 /* AppDelegate.swift in Sources */,
+				EBE54D842BF7618F00D0C696 /* UITableView+Reusable.swift in Sources */,
 				EBE54D792BF6C42800D0C696 /* UIView+Extensions.swift in Sources */,
+				EBE54D822BF7610300D0C696 /* UICollectionView+Reusable.swift in Sources */,
 				EBE54D752BF6C1B300D0C696 /* ListView.swift in Sources */,
+				EBE54D802BF7608A00D0C696 /* Reusable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
