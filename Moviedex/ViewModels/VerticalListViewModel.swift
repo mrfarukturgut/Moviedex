@@ -6,3 +6,19 @@
 //
 
 import Foundation
+
+class VerticalListViewModel {
+    
+    var onChanged: (([Content]) -> Void)?
+    
+    var contents: [Content]
+    
+    init(contents: [Content] = []) {
+        self.contents = contents
+    }
+    
+    func update(contents: [Content]) {
+        self.contents = contents
+        onChanged?(self.contents)
+    }
+}

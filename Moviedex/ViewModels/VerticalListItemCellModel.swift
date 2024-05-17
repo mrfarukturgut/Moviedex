@@ -6,3 +6,19 @@
 //
 
 import Foundation
+
+struct VerticalListItemCellModel {
+    private let content: Content
+    
+    var title: String {
+        content.title
+    }
+    
+    var releaseDate: String {
+        content.year
+    }
+    
+    init(content: Content) {
+        self.content = content
+    }
+}

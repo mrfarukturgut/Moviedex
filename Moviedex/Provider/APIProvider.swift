@@ -8,7 +8,7 @@
 import Foundation
 
 protocol Provider {
-    
+    func search(by term: String, page: Int, completion: @escaping (Result<Search, Error>) -> Void)
 }
 
 class APIProvider: Provider {
@@ -32,12 +32,11 @@ class APIProvider: Provider {
         request.httpMethod = "GET"
         
         let task = session.dataTask(with: request) { data, response, error in
-            print(data, response, error)
             
             let decoder = JSONDecoder()
             let data = try! decoder.decode(Search.self, from: data!)
             
-            print(data)
+            completion(.success(data))
         }
         
         task.resume()

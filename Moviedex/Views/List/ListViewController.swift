@@ -9,21 +9,14 @@ import UIKit
 
 class ListViewController: UIViewController {
     
-    private lazy var listView: ListView = .init()
+    let listViewModel: ListViewModel = .init()
+    
+    private lazy var listView: ListView = {
+        return .init(viewModel: listViewModel)
+    }()
     
     override func loadView() {
         view = listView
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let provider = APIProvider()
-        
-        
-        provider.search(by: "test", page: 1) { result in
-            print(result)
-        }
     }
 
 }

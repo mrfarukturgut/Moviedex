@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+struct HorizontalListViewModel {
+    var contents: [Content]
+    
+    init(contents: [Content] = []) {
+        self.contents = contents
+    }
+}

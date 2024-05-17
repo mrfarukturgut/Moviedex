@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+struct HorizontalListItemCellModel {
+    private let content: Content
+    
+    init(content: Content) {
+        self.content = content
+    }
+}

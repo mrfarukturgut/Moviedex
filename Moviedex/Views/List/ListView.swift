@@ -10,21 +10,25 @@ import UIKit
 
 class ListView: UIView {
     
-    private lazy var verticalListView: VerticalListView = .init()
+    private lazy var verticalListView: VerticalListView = .init(viewModel: viewModel.verticalListViewModel)
     private lazy var horizontalListView: HorizontalListView = .init()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    private let viewModel: ListViewModel
+    
+    init(viewModel: ListViewModel) {
+        self.viewModel = viewModel
+        super.init(frame: .zero)
         commonInit()
     }
     
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        commonInit()
+        fatalError("Do not use \(Self.self) on Interface Builder!")
     }
     
     private func commonInit() {
         backgroundColor = .white
+        
+        viewModel.fetchContents()
         
         setupSubviews()
     }

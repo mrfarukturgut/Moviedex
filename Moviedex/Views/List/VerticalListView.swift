@@ -14,21 +14,29 @@ class VerticalListView: UIView {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.showsVerticalScrollIndicator = false
+        tableView.register(cell: VerticalListItemCell.self)
         return tableView
     }()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    private let viewModel: VerticalListViewModel
+    
+    init(viewModel: VerticalListViewModel) {
+        self.viewModel = viewModel
+        
+        super.init(frame: .zero)
         commonInit()
     }
     
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        commonInit()
+        fatalError()
     }
     
     private func commonInit() {
         backgroundColor = .white
+        
+        viewModel.onChanged = { [weak self] contents in
+            self?.tableView.reloadData()
+        }
         
         setupSubviews()
     }
@@ -44,11 +52,13 @@ class VerticalListView: UIView {
 
 extension VerticalListView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        viewModel.contents.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return .init()
+        let cell = tableView.dequeue(cell: VerticalListItemCell.self, for: indexPath)
+        cell.update(with: .init(content: viewModel.contents[indexPath.row]))
+        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

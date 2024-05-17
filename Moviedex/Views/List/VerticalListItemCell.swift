@@ -7,7 +7,7 @@
 
 import UIKit
 
-class VerticalListItemCell: UITableViewCell {
+class VerticalListItemCell: UITableViewCell, Reusable {
     
     private lazy var posterView: UIImageView = {
         let imageView = UIImageView()
@@ -48,6 +48,11 @@ class VerticalListItemCell: UITableViewCell {
         commonInit()
     }
     
+    func update(with viewModel: VerticalListItemCellModel) {
+        titleLabel.text = viewModel.title
+        releaseDateLabel.text = viewModel.releaseDate
+    }
+    
     private func commonInit() {
         setupSubviews()
     }
@@ -66,8 +71,11 @@ class VerticalListItemCell: UITableViewCell {
         labelStackView.snp.makeConstraints { make in
             make.trailing.equalToSuperview().offset(8)
             make.centerY.equalToSuperview()
-            make.verticalEdges.greaterThanOrEqualToSuperview().inset(8)
+            make.verticalEdges.lessThanOrEqualToSuperview().inset(8)
             make.leading.equalTo(posterView.snp.trailing).inset(8)
         }
+        
+        labelStackView.addArrangedSubview(titleLabel)
+        labelStackView.addArrangedSubview(releaseDateLabel)
     }
 }
