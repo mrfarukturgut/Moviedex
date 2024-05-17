@@ -19,6 +19,13 @@
 		EBE54D802BF7608A00D0C696 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE54D7F2BF7608A00D0C696 /* Reusable.swift */; };
 		EBE54D822BF7610300D0C696 /* UICollectionView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE54D812BF7610300D0C696 /* UICollectionView+Reusable.swift */; };
 		EBE54D842BF7618F00D0C696 /* UITableView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE54D832BF7618F00D0C696 /* UITableView+Reusable.swift */; };
+		EBE54D8A2BF77C7300D0C696 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE54D892BF77C7300D0C696 /* ListViewModel.swift */; };
+		EBE54D8D2BF77C8800D0C696 /* VerticalListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE54D8C2BF77C8800D0C696 /* VerticalListViewModel.swift */; };
+		EBE54D8F2BF77C9100D0C696 /* HorizontalListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE54D8E2BF77C9100D0C696 /* HorizontalListViewModel.swift */; };
+		EBE54D912BF77CA700D0C696 /* HorizontalListItemCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE54D902BF77CA700D0C696 /* HorizontalListItemCellModel.swift */; };
+		EBE54D932BF77CC100D0C696 /* VerticalListItemCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE54D922BF77CC100D0C696 /* VerticalListItemCellModel.swift */; };
+		EBE54D952BF77CCF00D0C696 /* VerticalListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE54D942BF77CCF00D0C696 /* VerticalListItemCell.swift */; };
+		EBE54D972BF77CE800D0C696 /* HorizontalListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE54D962BF77CE800D0C696 /* HorizontalListItemCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +42,13 @@
 		EBE54D7F2BF7608A00D0C696 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		EBE54D812BF7610300D0C696 /* UICollectionView+Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Reusable.swift"; sourceTree = "<group>"; };
 		EBE54D832BF7618F00D0C696 /* UITableView+Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Reusable.swift"; sourceTree = "<group>"; };
+		EBE54D892BF77C7300D0C696 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		EBE54D8C2BF77C8800D0C696 /* VerticalListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalListViewModel.swift; sourceTree = "<group>"; };
+		EBE54D8E2BF77C9100D0C696 /* HorizontalListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalListViewModel.swift; sourceTree = "<group>"; };
+		EBE54D902BF77CA700D0C696 /* HorizontalListItemCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalListItemCellModel.swift; sourceTree = "<group>"; };
+		EBE54D922BF77CC100D0C696 /* VerticalListItemCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalListItemCellModel.swift; sourceTree = "<group>"; };
+		EBE54D942BF77CCF00D0C696 /* VerticalListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalListItemCell.swift; sourceTree = "<group>"; };
+		EBE54D962BF77CE800D0C696 /* HorizontalListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalListItemCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +84,8 @@
 			children = (
 				EBE54D762BF6C40E00D0C696 /* Utils */,
 				EBE54D722BF6C19500D0C696 /* Views */,
+				EBE54D852BF77C3D00D0C696 /* ViewModels */,
+				EBE54D862BF77C4F00D0C696 /* Models */,
 				EBE54D5B2BF6BF3000D0C696 /* AppDelegate.swift */,
 				EBE54D642BF6BF3100D0C696 /* Assets.xcassets */,
 				EBE54D662BF6BF3100D0C696 /* LaunchScreen.storyboard */,
@@ -93,6 +109,8 @@
 				EBE54D742BF6C1B300D0C696 /* ListView.swift */,
 				EBE54D7A2BF6D26E00D0C696 /* VerticalListView.swift */,
 				EBE54D7C2BF6D28400D0C696 /* HorizontalListView.swift */,
+				EBE54D942BF77CCF00D0C696 /* VerticalListItemCell.swift */,
+				EBE54D962BF77CE800D0C696 /* HorizontalListItemCell.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -122,6 +140,18 @@
 				EBE54D7F2BF7608A00D0C696 /* Reusable.swift */,
 			);
 			path = Reusable;
+			sourceTree = "<group>";
+		};
+		EBE54D852BF77C3D00D0C696 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				EBE54D892BF77C7300D0C696 /* ListViewModel.swift */,
+				EBE54D8C2BF77C8800D0C696 /* VerticalListViewModel.swift */,
+				EBE54D8E2BF77C9100D0C696 /* HorizontalListViewModel.swift */,
+				EBE54D902BF77CA700D0C696 /* HorizontalListItemCellModel.swift */,
+				EBE54D922BF77CC100D0C696 /* VerticalListItemCellModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,14 +231,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBE54D7B2BF6D26E00D0C696 /* VerticalListView.swift in Sources */,
+				EBE54D8F2BF77C9100D0C696 /* HorizontalListViewModel.swift in Sources */,
 				EBE54D602BF6BF3000D0C696 /* ListViewController.swift in Sources */,
+				EBE54D932BF77CC100D0C696 /* VerticalListItemCellModel.swift in Sources */,
 				EBE54D7D2BF6D28400D0C696 /* HorizontalListView.swift in Sources */,
 				EBE54D5C2BF6BF3000D0C696 /* AppDelegate.swift in Sources */,
 				EBE54D842BF7618F00D0C696 /* UITableView+Reusable.swift in Sources */,
 				EBE54D792BF6C42800D0C696 /* UIView+Extensions.swift in Sources */,
 				EBE54D822BF7610300D0C696 /* UICollectionView+Reusable.swift in Sources */,
+				EBE54D952BF77CCF00D0C696 /* VerticalListItemCell.swift in Sources */,
+				EBE54D8D2BF77C8800D0C696 /* VerticalListViewModel.swift in Sources */,
+				EBE54D972BF77CE800D0C696 /* HorizontalListItemCell.swift in Sources */,
 				EBE54D752BF6C1B300D0C696 /* ListView.swift in Sources */,
 				EBE54D802BF7608A00D0C696 /* Reusable.swift in Sources */,
+				EBE54D912BF77CA700D0C696 /* HorizontalListItemCellModel.swift in Sources */,
+				EBE54D8A2BF77C7300D0C696 /* ListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
