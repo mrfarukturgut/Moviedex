@@ -19,6 +19,8 @@ class APIProvider: Provider {
     
     func search(by term: String, page: Int, completion: @escaping (Result<Search, Error>) -> Void) {
         
+        @MainThread var completion = completion
+        
         let parameters = [
             "apiKey": "14d38eb2",
             "s": term,
@@ -40,7 +42,6 @@ class APIProvider: Provider {
         }
         
         task.resume()
-
     }
     
 }
