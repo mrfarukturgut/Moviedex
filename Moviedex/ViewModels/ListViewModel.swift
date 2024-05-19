@@ -20,21 +20,21 @@ class ListViewModel {
     }
     
     func fetchContents() {
-        let group = DispatchGroup()
-        
-        group.enter()
-        verticalListViewModel.fetch {
-            group.leave()
-        }
-        
-        group.enter()
-        horizontalListViewModel.fetch {
-            group.leave()
-        }
-        
-        group.notify(queue: .main) {
-            print("both ended")
-        }
+//        let group = DispatchGroup()
+//        
+//        group.enter()
+//        verticalListViewModel.fetch {
+//            group.leave()
+//        }
+//        
+//        group.enter()
+//        horizontalListViewModel.fetch {
+//            group.leave()
+//        }
+//        
+//        group.notify(queue: .main) {
+//            print("both ended")
+//        }
     }
     
 }

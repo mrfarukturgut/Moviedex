@@ -10,6 +10,8 @@ import Foundation
 class HorizontalListViewModel {
     
     private let provider: Provider
+    private var page: Int = 1
+    private var term: String = "test"
     
     var onChanged: (([Content]) -> Void)?
     
@@ -20,20 +22,25 @@ class HorizontalListViewModel {
         self.contents = contents
     }
     
-    func fetch(completion: @escaping () -> Void) {
-        provider.search(by: "another", page: 1) { [weak self] result in
+    func viewWillShowItem(at index: Int) {
+        guard index == contents.count - 8 else { return }
+        fetch()
+    }
+    
+    func fetch() {
+        provider.search(by: term, page: page) { [weak self] result in
             switch result {
             case let .success(response):
                 self?.update(contents: response.search)
+                self?.page += 1
             case .failure(_):
                 break
             }
-            completion()
         }
     }
     
     private func update(contents: [Content]) {
-        self.contents = contents
+        self.contents += contents
         onChanged?(self.contents)
     }
 }

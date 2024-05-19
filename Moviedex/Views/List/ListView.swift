@@ -39,7 +39,7 @@ class ListView: UIView {
         horizontalListView.snp.makeConstraints { make in
             make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom)
             make.horizontalEdges.equalToSuperview()
-            make.height.equalTo(172)
+            make.height.equalTo(176)
         }
         
         verticalListView.snp.makeConstraints { make in

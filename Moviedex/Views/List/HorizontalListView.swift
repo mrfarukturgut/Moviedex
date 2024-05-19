@@ -47,6 +47,8 @@ class HorizontalListView: UIView {
             self?.collectionView.reloadData()
         }
         
+        viewModel.fetch()
+        
         setupSubviews()
     }
     
@@ -68,5 +70,9 @@ extension HorizontalListView: UICollectionViewDelegate, UICollectionViewDataSour
         let cell = collectionView.dequeue(cell: HorizontalListItemCell.self, for: indexPath)
         cell.update(with: .init(content: viewModel.contents[indexPath.row]))
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        viewModel.viewWillShowItem(at: indexPath.row)
     }
 }

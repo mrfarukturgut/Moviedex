@@ -38,6 +38,8 @@ class VerticalListView: UIView {
             self?.tableView.reloadData()
         }
         
+        viewModel.fetch()
+        
         setupSubviews()
     }
     
@@ -61,7 +63,12 @@ extension VerticalListView: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        viewModel.viewWillShowItem(at: indexPath.row)
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         UITableView.automaticDimension
     }
+    
 }
