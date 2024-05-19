@@ -28,7 +28,7 @@ class VerticalListView: UIView {
     }
     
     required init?(coder: NSCoder) {
-        fatalError()
+        fatalError("Do not use \(Self.self) on Interface Builder!")
     }
     
     private func commonInit() {

@@ -9,32 +9,43 @@ import SnapKit
 import UIKit
 
 class HorizontalListView: UIView {
-    private lazy var flowLayout: UICollectionViewFlowLayout = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        return layout
-    }()
     
     private lazy var collectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.itemSize = .init(width: 90, height: 160)
+        
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.showsHorizontalScrollIndicator = false
+        collectionView.contentInset = .init(top: 8, left: 8, bottom: 8, right: 8)
+        collectionView.register(cell: HorizontalListItemCell.self)
+        
+        layout.minimumInteritemSpacing = 8
+        
         return collectionView
     }()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    private let viewModel: HorizontalListViewModel
+    
+    init(viewModel: HorizontalListViewModel) {
+        self.viewModel = viewModel
+        
+        super.init(frame: .zero)
         commonInit()
     }
     
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        commonInit()
+        fatalError("Do not use \(Self.self) on Interface Builder!")
     }
     
     private func commonInit() {
         backgroundColor = .white
+        
+        viewModel.onChanged = { [weak self] contents in
+            self?.collectionView.reloadData()
+        }
         
         setupSubviews()
     }
@@ -50,10 +61,12 @@ class HorizontalListView: UIView {
 
 extension HorizontalListView: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return viewModel.contents.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return .init()
+        let cell = collectionView.dequeue(cell: HorizontalListItemCell.self, for: indexPath)
+        cell.update(with: .init(content: viewModel.contents[indexPath.row]))
+        return cell
     }
 }

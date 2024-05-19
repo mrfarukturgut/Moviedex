@@ -50,8 +50,13 @@ class ListViewModel {
     }
     
     private func fetchHorizontalListData(completion: @escaping () -> Void) {
-        provider.search(by: "another", page: 1) { result in
-            print(result)
+        provider.search(by: "another", page: 1) { [weak self] result in
+            switch result {
+            case let .success(response):
+                self?.horizontalListViewModel.update(contents: response.search)
+            case .failure(_):
+                break
+            }
             completion()
         }
     }

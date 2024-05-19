@@ -7,10 +7,18 @@
 
 import Foundation
 
-struct HorizontalListViewModel {
+class HorizontalListViewModel {
+    
+    var onChanged: (([Content]) -> Void)?
+    
     var contents: [Content]
     
     init(contents: [Content] = []) {
         self.contents = contents
+    }
+    
+    func update(contents: [Content]) {
+        self.contents = contents
+        onChanged?(self.contents)
     }
 }

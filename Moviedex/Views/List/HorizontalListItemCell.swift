@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HorizontalListItemCell: UICollectionViewCell {
+class HorizontalListItemCell: UICollectionViewCell, Reusable {
     
     private lazy var posterView: UIImageView = {
         let imageView = UIImageView()
@@ -26,6 +26,10 @@ class HorizontalListItemCell: UICollectionViewCell {
         commonInit()
     }
     
+    func update(with viewModel: HorizontalListItemCellModel) {
+        posterView.backgroundColor = .purple
+    }
+    
     private func commonInit() {
         setupSubviews()
     }
@@ -34,8 +38,6 @@ class HorizontalListItemCell: UICollectionViewCell {
         contentView.addSubview(posterView)
         
         posterView.snp.makeConstraints { make in
-            make.height.equalTo(160)
-            make.width.equalTo(90)
             make.edges.equalToSuperview()
         }
     }

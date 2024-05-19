@@ -11,7 +11,7 @@ import UIKit
 class ListView: UIView {
     
     private lazy var verticalListView: VerticalListView = .init(viewModel: viewModel.verticalListViewModel)
-    private lazy var horizontalListView: HorizontalListView = .init()
+    private lazy var horizontalListView: HorizontalListView = .init(viewModel: viewModel.horizontalListViewModel)
     
     private let viewModel: ListViewModel
     
@@ -39,7 +39,7 @@ class ListView: UIView {
         horizontalListView.snp.makeConstraints { make in
             make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom)
             make.horizontalEdges.equalToSuperview()
-            make.height.equalTo(192)
+            make.height.equalTo(172)
         }
         
         verticalListView.snp.makeConstraints { make in
