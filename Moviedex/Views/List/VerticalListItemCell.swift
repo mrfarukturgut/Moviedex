@@ -65,14 +65,14 @@ class VerticalListItemCell: UITableViewCell, Reusable {
             make.width.equalTo(45)
             make.leading.equalToSuperview().inset(8)
             make.centerY.equalToSuperview()
-            make.verticalEdges.greaterThanOrEqualToSuperview().inset(8)
+            make.top.greaterThanOrEqualToSuperview().inset(8)
         }
         
         labelStackView.snp.makeConstraints { make in
-            make.trailing.equalToSuperview().offset(8)
+            make.trailing.equalToSuperview().inset(8)
             make.centerY.equalToSuperview()
-            make.verticalEdges.lessThanOrEqualToSuperview().inset(8)
-            make.leading.equalTo(posterView.snp.trailing).inset(8)
+            make.top.greaterThanOrEqualToSuperview().inset(8)
+            make.leading.equalTo(posterView.snp.trailing).offset(8)
         }
         
         labelStackView.addArrangedSubview(titleLabel)
