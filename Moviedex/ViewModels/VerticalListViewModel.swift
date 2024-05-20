@@ -13,7 +13,7 @@ class VerticalListViewModel {
     private var page: Int = 1
     private var term: String = "Star"
     
-    var onChanged: (([Content]) -> Void)?
+    var onChanged: (() -> Void)?
     
     var contents: [Content]
     
@@ -41,6 +41,6 @@ class VerticalListViewModel {
     
     private func update(contents: [Content]) {
         self.contents += contents
-        onChanged?(self.contents)
+        onChanged?()
     }
 }

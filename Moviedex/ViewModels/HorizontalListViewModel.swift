@@ -15,7 +15,7 @@ class HorizontalListViewModel {
     private var page: Int = 1
     private var term: String = "Comedy"
     
-    var onChanged: (([Content]) -> Void)?
+    var onChanged: (() -> Void)?
     
     var contents: [Content]
     
@@ -43,6 +43,6 @@ class HorizontalListViewModel {
     
     private func update(contents: [Content]) {
         self.contents += contents
-        onChanged?(self.contents)
+        onChanged?()
     }
 }

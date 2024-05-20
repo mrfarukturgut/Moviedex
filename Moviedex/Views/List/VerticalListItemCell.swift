@@ -11,8 +11,7 @@ class VerticalListItemCell: UITableViewCell, Reusable {
     
     private lazy var posterView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .gray
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     
@@ -48,9 +47,19 @@ class VerticalListItemCell: UITableViewCell, Reusable {
         commonInit()
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        posterView.image = nil
+    }
+    
     func update(with viewModel: VerticalListItemCellModel) {
         titleLabel.text = viewModel.title
         releaseDateLabel.text = viewModel.releaseDate
+        
+        viewModel.image { [weak self] image in
+            self?.posterView.image = image
+        }
     }
     
     private func commonInit() {

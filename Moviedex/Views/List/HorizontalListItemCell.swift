@@ -11,7 +11,6 @@ class HorizontalListItemCell: UICollectionViewCell, Reusable {
     
     private lazy var posterView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .gray
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         return imageView

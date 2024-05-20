@@ -43,7 +43,7 @@ class HorizontalListView: UIView {
     private func commonInit() {
         backgroundColor = .white
         
-        viewModel.onChanged = { [weak self] contents in
+        viewModel.onChanged = { [weak self] in
             self?.collectionView.reloadData()
         }
         
