@@ -11,7 +11,7 @@ class VerticalListViewModel {
     
     private let provider: Provider
     private var page: Int = 1
-    private var term: String = "test"
+    private var term: String = "Star"
     
     var onChanged: (([Content]) -> Void)?
     

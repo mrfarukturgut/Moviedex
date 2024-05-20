@@ -30,6 +30,7 @@
 		EBE54D992BF77E4600D0C696 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE54D982BF77E4600D0C696 /* Content.swift */; };
 		EBE54D9C2BF77FA700D0C696 /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE54D9B2BF77FA700D0C696 /* APIProvider.swift */; };
 		EBE54D9E2BF7FFA000D0C696 /* MainThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE54D9D2BF7FFA000D0C696 /* MainThread.swift */; };
+		EBE54DA12BFB6A7200D0C696 /* ImageCacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE54DA02BFB6A7200D0C696 /* ImageCacher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		EBE54D982BF77E4600D0C696 /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 		EBE54D9B2BF77FA700D0C696 /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
 		EBE54D9D2BF7FFA000D0C696 /* MainThread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainThread.swift; sourceTree = "<group>"; };
+		EBE54DA02BFB6A7200D0C696 /* ImageCacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 				EBE54D9F2BF96E0800D0C696 /* PropertyWrappers */,
 				EBE54D7E2BF7608300D0C696 /* Reusable */,
 				EBE54D772BF6C41800D0C696 /* Extensions */,
+				EBE54DA02BFB6A7200D0C696 /* ImageCacher.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				EBE54D5C2BF6BF3000D0C696 /* AppDelegate.swift in Sources */,
 				EBE54D842BF7618F00D0C696 /* UITableView+Reusable.swift in Sources */,
 				EBE54D792BF6C42800D0C696 /* UIView+Extensions.swift in Sources */,
+				EBE54DA12BFB6A7200D0C696 /* ImageCacher.swift in Sources */,
 				EBE54D822BF7610300D0C696 /* UICollectionView+Reusable.swift in Sources */,
 				EBE54D882BF77C5900D0C696 /* Search.swift in Sources */,
 				EBE54D952BF77CCF00D0C696 /* VerticalListItemCell.swift in Sources */,

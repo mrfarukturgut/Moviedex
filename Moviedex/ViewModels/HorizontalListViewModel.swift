@@ -7,11 +7,13 @@
 
 import Foundation
 
+    
+
 class HorizontalListViewModel {
     
     private let provider: Provider
     private var page: Int = 1
-    private var term: String = "test"
+    private var term: String = "Comedy"
     
     var onChanged: (([Content]) -> Void)?
     

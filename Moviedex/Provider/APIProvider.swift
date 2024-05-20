@@ -15,7 +15,11 @@ class APIProvider: Provider {
     
     private let session = URLSession.shared
     
-    private let url: String = "https://www.omdbapi.com/"
+    private let url: String
+    
+    init(url: String = "https://www.omdbapi.com/") {
+        self.url = url
+    }
     
     func search(by term: String, page: Int, completion: @escaping (Result<Search, Error>) -> Void) {
         
@@ -43,5 +47,4 @@ class APIProvider: Provider {
         
         task.resume()
     }
-    
 }

@@ -12,7 +12,8 @@ class HorizontalListItemCell: UICollectionViewCell, Reusable {
     private lazy var posterView: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = .gray
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         return imageView
     }()
     
@@ -26,8 +27,16 @@ class HorizontalListItemCell: UICollectionViewCell, Reusable {
         commonInit()
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        posterView.image = nil
+    }
+    
     func update(with viewModel: HorizontalListItemCellModel) {
-        posterView.backgroundColor = .purple
+        viewModel.image { [weak self] image in
+            self?.posterView.image = image
+        }
     }
     
     private func commonInit() {
