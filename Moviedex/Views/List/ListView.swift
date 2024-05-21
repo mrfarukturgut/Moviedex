@@ -12,6 +12,7 @@ class ListView: UIView {
     
     private lazy var verticalListView: VerticalListView = .init(viewModel: viewModel.verticalListViewModel)
     private lazy var horizontalListView: HorizontalListView = .init(viewModel: viewModel.horizontalListViewModel)
+    private lazy var searchView: SearchView = .init(viewModel: viewModel.searchViewModel)
     
     private let viewModel: ListViewModel
     
@@ -34,7 +35,12 @@ class ListView: UIView {
     }
     
     private func setupSubviews() {
-        addSubviews(verticalListView, horizontalListView)
+        addSubviews(verticalListView, horizontalListView, searchView)
+        
+        searchView.snp.makeConstraints { make in
+            make.horizontalEdges.equalToSuperview().inset(24)
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).inset(8)
+        }
         
         horizontalListView.snp.makeConstraints { make in
             make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom)
@@ -43,7 +49,7 @@ class ListView: UIView {
         }
         
         verticalListView.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top)
+            make.top.equalTo(searchView.snp.bottom).offset(8)
             make.horizontalEdges.equalToSuperview()
             make.bottom.equalTo(horizontalListView.snp.top)
         }

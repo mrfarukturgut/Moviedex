@@ -31,6 +31,8 @@
 		EBE54D9C2BF77FA700D0C696 /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE54D9B2BF77FA700D0C696 /* APIProvider.swift */; };
 		EBE54D9E2BF7FFA000D0C696 /* MainThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE54D9D2BF7FFA000D0C696 /* MainThread.swift */; };
 		EBE54DA12BFB6A7200D0C696 /* ImageCacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE54DA02BFB6A7200D0C696 /* ImageCacher.swift */; };
+		EBE54DA32BFC269100D0C696 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE54DA22BFC269100D0C696 /* SearchView.swift */; };
+		EBE54DA52BFC26C900D0C696 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE54DA42BFC26C900D0C696 /* SearchViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +61,8 @@
 		EBE54D9B2BF77FA700D0C696 /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
 		EBE54D9D2BF7FFA000D0C696 /* MainThread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainThread.swift; sourceTree = "<group>"; };
 		EBE54DA02BFB6A7200D0C696 /* ImageCacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacher.swift; sourceTree = "<group>"; };
+		EBE54DA22BFC269100D0C696 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		EBE54DA42BFC26C900D0C696 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,7 @@
 				EBE54D7C2BF6D28400D0C696 /* HorizontalListView.swift */,
 				EBE54D942BF77CCF00D0C696 /* VerticalListItemCell.swift */,
 				EBE54D962BF77CE800D0C696 /* HorizontalListItemCell.swift */,
+				EBE54DA22BFC269100D0C696 /* SearchView.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -163,6 +168,7 @@
 				EBE54D8E2BF77C9100D0C696 /* HorizontalListViewModel.swift */,
 				EBE54D902BF77CA700D0C696 /* HorizontalListItemCellModel.swift */,
 				EBE54D922BF77CC100D0C696 /* VerticalListItemCellModel.swift */,
+				EBE54DA42BFC26C900D0C696 /* SearchViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -278,9 +284,11 @@
 				EBE54D992BF77E4600D0C696 /* Content.swift in Sources */,
 				EBE54D5C2BF6BF3000D0C696 /* AppDelegate.swift in Sources */,
 				EBE54D842BF7618F00D0C696 /* UITableView+Reusable.swift in Sources */,
+				EBE54DA32BFC269100D0C696 /* SearchView.swift in Sources */,
 				EBE54D792BF6C42800D0C696 /* UIView+Extensions.swift in Sources */,
 				EBE54DA12BFB6A7200D0C696 /* ImageCacher.swift in Sources */,
 				EBE54D822BF7610300D0C696 /* UICollectionView+Reusable.swift in Sources */,
+				EBE54DA52BFC26C900D0C696 /* SearchViewModel.swift in Sources */,
 				EBE54D882BF77C5900D0C696 /* Search.swift in Sources */,
 				EBE54D952BF77CCF00D0C696 /* VerticalListItemCell.swift in Sources */,
 				EBE54D8D2BF77C8800D0C696 /* VerticalListViewModel.swift in Sources */,

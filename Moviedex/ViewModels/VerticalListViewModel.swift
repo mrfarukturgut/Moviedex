@@ -11,15 +11,16 @@ class VerticalListViewModel {
     
     private let provider: Provider
     private var page: Int = 1
-    private var term: String = "Star"
+    private var term: String
     
     var onChanged: (() -> Void)?
     
     var contents: [Content]
     
-    init(contents: [Content] = [], provider: Provider = APIProvider()) {
+    init(contents: [Content] = [], term: String, provider: Provider = APIProvider()) {
         self.provider = provider
         self.contents = contents
+        self.term = term
     }
     
     func viewWillShowItem(at index: Int) {
@@ -37,6 +38,13 @@ class VerticalListViewModel {
                 break
             }
         }
+    }
+    
+    func update(term: String) {
+        self.term = term
+        self.page = 1
+        self.contents = []
+        fetch()
     }
     
     private func update(contents: [Content]) {

@@ -10,13 +10,23 @@ import Foundation
 class ListViewModel {
     var verticalListViewModel: VerticalListViewModel
     var horizontalListViewModel: HorizontalListViewModel
+    var searchViewModel: SearchViewModel
     
-    private let provider: Provider
+    private var searchTerm: String = "Star"
     
-    init(provider: Provider = APIProvider()) {
-        self.verticalListViewModel = .init()
+    init() {
+        self.verticalListViewModel = .init(term: searchTerm)
         self.horizontalListViewModel = .init()
-        self.provider = provider
+        self.searchViewModel = .init(term: searchTerm)
+        
+        setupEvents()
+    }
+    
+    private func setupEvents() {
+        searchViewModel.onSearch = { [weak self] term in
+            self?.searchTerm = term
+            self?.verticalListViewModel.update(term: term)
+        }
     }
     
     func fetchContents() {
