@@ -11,6 +11,7 @@ class VerticalListItemCell: UITableViewCell, Reusable {
     
     private lazy var posterView: UIImageView = {
         let imageView = UIImageView()
+        imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()

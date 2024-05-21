@@ -33,6 +33,9 @@
 		EBE54DA12BFB6A7200D0C696 /* ImageCacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE54DA02BFB6A7200D0C696 /* ImageCacher.swift */; };
 		EBE54DA32BFC269100D0C696 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE54DA22BFC269100D0C696 /* SearchView.swift */; };
 		EBE54DA52BFC26C900D0C696 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE54DA42BFC26C900D0C696 /* SearchViewModel.swift */; };
+		EBE54DA82BFCCA5E00D0C696 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE54DA72BFCCA5E00D0C696 /* DetailViewController.swift */; };
+		EBE54DAA2BFCCAD600D0C696 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE54DA92BFCCAD600D0C696 /* DetailView.swift */; };
+		EBE54DAC2BFCCB6D00D0C696 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE54DAB2BFCCB6D00D0C696 /* DetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +66,9 @@
 		EBE54DA02BFB6A7200D0C696 /* ImageCacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacher.swift; sourceTree = "<group>"; };
 		EBE54DA22BFC269100D0C696 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		EBE54DA42BFC26C900D0C696 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		EBE54DA72BFCCA5E00D0C696 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		EBE54DA92BFCCAD600D0C696 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		EBE54DAB2BFCCB6D00D0C696 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +118,7 @@
 		EBE54D722BF6C19500D0C696 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				EBE54DA62BFCCA5400D0C696 /* Detail */,
 				EBE54D732BF6C1A300D0C696 /* List */,
 			);
 			path = Views;
@@ -169,6 +176,7 @@
 				EBE54D902BF77CA700D0C696 /* HorizontalListItemCellModel.swift */,
 				EBE54D922BF77CC100D0C696 /* VerticalListItemCellModel.swift */,
 				EBE54DA42BFC26C900D0C696 /* SearchViewModel.swift */,
+				EBE54DAB2BFCCB6D00D0C696 /* DetailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -196,6 +204,15 @@
 				EBE54D9D2BF7FFA000D0C696 /* MainThread.swift */,
 			);
 			path = PropertyWrappers;
+			sourceTree = "<group>";
+		};
+		EBE54DA62BFCCA5400D0C696 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				EBE54DA72BFCCA5E00D0C696 /* DetailViewController.swift */,
+				EBE54DA92BFCCAD600D0C696 /* DetailView.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,6 +299,8 @@
 				EBE54D9C2BF77FA700D0C696 /* APIProvider.swift in Sources */,
 				EBE54D7D2BF6D28400D0C696 /* HorizontalListView.swift in Sources */,
 				EBE54D992BF77E4600D0C696 /* Content.swift in Sources */,
+				EBE54DAA2BFCCAD600D0C696 /* DetailView.swift in Sources */,
+				EBE54DAC2BFCCB6D00D0C696 /* DetailViewModel.swift in Sources */,
 				EBE54D5C2BF6BF3000D0C696 /* AppDelegate.swift in Sources */,
 				EBE54D842BF7618F00D0C696 /* UITableView+Reusable.swift in Sources */,
 				EBE54DA32BFC269100D0C696 /* SearchView.swift in Sources */,
@@ -289,6 +308,7 @@
 				EBE54DA12BFB6A7200D0C696 /* ImageCacher.swift in Sources */,
 				EBE54D822BF7610300D0C696 /* UICollectionView+Reusable.swift in Sources */,
 				EBE54DA52BFC26C900D0C696 /* SearchViewModel.swift in Sources */,
+				EBE54DA82BFCCA5E00D0C696 /* DetailViewController.swift in Sources */,
 				EBE54D882BF77C5900D0C696 /* Search.swift in Sources */,
 				EBE54D952BF77CCF00D0C696 /* VerticalListItemCell.swift in Sources */,
 				EBE54D8D2BF77C8800D0C696 /* VerticalListViewModel.swift in Sources */,

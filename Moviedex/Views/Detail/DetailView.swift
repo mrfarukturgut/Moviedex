@@ -1,0 +1,72 @@
+//
+//  DetailView.swift
+//  Moviedex
+//
+//  Created by Faruk Turgut on 21.05.2024.
+//
+
+import UIKit
+
+class DetailView: UIView {
+    
+    private lazy var stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.spacing = 12
+        return stackView
+    }()
+    
+    private lazy var posterView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFill
+        return imageView
+    }()
+
+    private lazy var titleLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
+        return label
+    }()
+    
+    private let viewModel: DetailViewModel
+    
+    init(viewModel: DetailViewModel) {
+        self.viewModel = viewModel
+        super.init(frame: .zero)
+        commonInit()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("Do not use \(Self.self) on Interface Builder!")
+    }
+    
+    private func commonInit() {
+        backgroundColor = .white
+        
+        setupSubviews()
+        
+        titleLabel.text = viewModel.title
+        
+        viewModel.image { [weak self] image in
+            self?.posterView.image = image
+        }
+    }
+    
+    private func setupSubviews() {
+        addSubview(stackView)
+        
+        stackView.snp.makeConstraints { make in
+            make.edges.equalToSuperview().inset(24)
+        }
+        
+        stackView.addArrangedSubview(posterView)
+        stackView.addArrangedSubview(titleLabel)
+        
+        posterView.snp.makeConstraints { make in
+            make.height.equalTo(240)
+            make.width.equalTo(135)
+        }
+    }
+}
