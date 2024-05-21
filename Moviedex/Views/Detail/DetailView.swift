@@ -13,6 +13,7 @@ class DetailView: UIView {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.spacing = 12
+        stackView.alignment = .center
         return stackView
     }()
     
@@ -27,6 +28,7 @@ class DetailView: UIView {
         let label = UILabel()
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
+        label.textAlignment = .center
         return label
     }()
     
@@ -58,7 +60,7 @@ class DetailView: UIView {
         addSubview(stackView)
         
         stackView.snp.makeConstraints { make in
-            make.edges.equalTo(safeAreaLayoutGuide.snp.edges).inset(24)
+            make.top.horizontalEdges.equalTo(safeAreaLayoutGuide).inset(24)
         }
         
         stackView.addArrangedSubview(posterView)
