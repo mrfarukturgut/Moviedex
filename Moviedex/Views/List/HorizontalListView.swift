@@ -47,8 +47,6 @@ class HorizontalListView: UIView {
             self?.collectionView.reloadData()
         }
         
-        viewModel.fetch()
-        
         setupSubviews()
     }
     

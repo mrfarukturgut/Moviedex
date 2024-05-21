@@ -39,8 +39,6 @@ class VerticalListView: UIView {
             self?.tableView.reloadData()
         }
         
-        viewModel.fetch()
-        
         setupSubviews()
     }
     

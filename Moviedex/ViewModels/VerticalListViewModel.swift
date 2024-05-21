@@ -25,7 +25,7 @@ class VerticalListViewModel {
     }
     
     func willShowItem(at index: Int) {
-        guard index == contents.count - 8 else { return }
+        guard index == contents.count - 4 else { return }
         fetch()
     }
     
@@ -33,14 +33,15 @@ class VerticalListViewModel {
         onSelect?(contents[index])
     }
     
-    func fetch() {
+    func fetch(completion: @escaping ((Error?) -> Void) = { _ in }) {
         provider.search(by: term, page: page) { [weak self] result in
             switch result {
             case let .success(response):
                 self?.update(contents: response.search)
                 self?.page += 1
-            case .failure(_):
-                break
+                completion(nil)
+            case let .failure(error):
+                completion(error)
             }
         }
     }

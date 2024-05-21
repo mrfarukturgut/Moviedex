@@ -44,31 +44,39 @@ class StatefulView<T: UIView>: UIView {
     private func updateView(with state: ViewState) {
         switch state {
         case .content:
-            content.isHidden = false
+            stackView.isHidden = true
             informationView.isHidden = true
             loadingView.isHidden = true
         case .loading:
-            content.isHidden = true
+            stackView.isHidden = false
             informationView.isHidden = true
             loadingView.isHidden = false
-        case .information:
-            content.isHidden = true
+        case .information(let message):
+            informationView.update(with: .init(message: message))
+            
+            stackView.isHidden = false
             informationView.isHidden = false
             loadingView.isHidden = true
         }
     }
     
     private func setupSubviews() {
-        addSubview(stackView)
+        addSubviews(content, stackView)
         
-        [content, loadingView, informationView].forEach({
+        [loadingView, informationView].forEach({
             $0.isHidden = true
             stackView.addArrangedSubview($0)
         })
         
+        content.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        
         stackView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+        
+        bringSubviewToFront(stackView)
     }
     
 }

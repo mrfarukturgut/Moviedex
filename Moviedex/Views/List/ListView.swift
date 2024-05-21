@@ -30,6 +30,7 @@ class ListView: UIView {
         backgroundColor = .white
         
         setupSubviews()
+        viewModel.fetchContents()
     }
     
     private func setupSubviews() {

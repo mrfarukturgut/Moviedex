@@ -41,6 +41,7 @@
 		EBE54DB42BFCD83C00D0C696 /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE54DB32BFCD83C00D0C696 /* ViewState.swift */; };
 		EBE54DB82BFCF46B00D0C696 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE54DB72BFCF46B00D0C696 /* LoadingView.swift */; };
 		EBE54DBB2BFCF52600D0C696 /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE54DBA2BFCF52600D0C696 /* InformationView.swift */; };
+		EBE54DBD2BFD0B6300D0C696 /* InformationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE54DBC2BFD0B6300D0C696 /* InformationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +80,7 @@
 		EBE54DB32BFCD83C00D0C696 /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
 		EBE54DB72BFCF46B00D0C696 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		EBE54DBA2BFCF52600D0C696 /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
+		EBE54DBC2BFD0B6300D0C696 /* InformationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				EBE54DBA2BFCF52600D0C696 /* InformationView.swift */,
+				EBE54DBC2BFD0B6300D0C696 /* InformationViewModel.swift */,
 			);
 			path = InformationView;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				EBE54D8F2BF77C9100D0C696 /* HorizontalListViewModel.swift in Sources */,
 				EBE54D602BF6BF3000D0C696 /* ListViewController.swift in Sources */,
 				EBE54D932BF77CC100D0C696 /* VerticalListItemCellModel.swift in Sources */,
+				EBE54DBD2BFD0B6300D0C696 /* InformationViewModel.swift in Sources */,
 				EBE54D9C2BF77FA700D0C696 /* APIProvider.swift in Sources */,
 				EBE54D7D2BF6D28400D0C696 /* HorizontalListView.swift in Sources */,
 				EBE54D992BF77E4600D0C696 /* Content.swift in Sources */,

@@ -9,14 +9,13 @@ import UIKit
 
 class ListViewController: UIViewController {
     
-    let listViewModel: ListViewModel = .init()
+    private let listViewModel: ListViewModel = .init()
     
-    private lazy var listView: ListView = {
-        return .init(viewModel: listViewModel)
-    }()
+    private lazy var listView: ListView = .init(viewModel: listViewModel)
+    private lazy var statefulView: StatefulView = .init(content: listView, viewModel: listViewModel.statefulViewModel)
     
     override func loadView() {
-        view = listView
+        view = statefulView
     }
     
     override func viewDidLoad() {

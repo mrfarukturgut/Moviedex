@@ -10,5 +10,5 @@ import Foundation
 enum ViewState {
     case loading
     case content
-    case information
+    case information(message: String)
 }
