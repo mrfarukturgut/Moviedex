@@ -29,8 +29,6 @@ class ListView: UIView {
     private func commonInit() {
         backgroundColor = .white
         
-        viewModel.fetchContents()
-        
         setupSubviews()
     }
     

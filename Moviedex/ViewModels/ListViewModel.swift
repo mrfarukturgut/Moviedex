@@ -12,6 +12,8 @@ class ListViewModel {
     var horizontalListViewModel: HorizontalListViewModel
     var searchViewModel: SearchViewModel
     
+    var onSelect: ((DetailViewModel) -> Void)?
+    
     private var searchTerm: String = "Star"
     
     init() {
@@ -26,6 +28,18 @@ class ListViewModel {
         searchViewModel.onSearch = { [weak self] term in
             self?.searchTerm = term
             self?.verticalListViewModel.update(term: term)
+        }
+        
+        verticalListViewModel.onSelect = { [weak self] content in
+            let viewModel = DetailViewModel(content: content)
+            
+            self?.onSelect?(viewModel)
+        }
+        
+        horizontalListViewModel.onSelect = { [weak self] content in
+            let viewModel = DetailViewModel(content: content)
+            
+            self?.onSelect?(viewModel)
         }
     }
     

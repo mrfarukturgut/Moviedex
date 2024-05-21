@@ -73,6 +73,10 @@ extension HorizontalListView: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        viewModel.viewWillShowItem(at: indexPath.row)
+        viewModel.willShowItem(at: indexPath.row)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.didSelectItem(at: indexPath.row)
     }
 }

@@ -64,6 +64,8 @@ class VerticalListItemCell: UITableViewCell, Reusable {
     }
     
     private func commonInit() {
+        selectionStyle = .none
+        
         setupSubviews()
     }
     

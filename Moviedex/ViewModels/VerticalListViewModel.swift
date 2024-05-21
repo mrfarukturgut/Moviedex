@@ -13,6 +13,7 @@ class VerticalListViewModel {
     private var page: Int = 1
     private var term: String
     
+    var onSelect: ((Content) -> Void)?
     var onChanged: (() -> Void)?
     
     var contents: [Content]
@@ -23,9 +24,13 @@ class VerticalListViewModel {
         self.term = term
     }
     
-    func viewWillShowItem(at index: Int) {
+    func willShowItem(at index: Int) {
         guard index == contents.count - 8 else { return }
         fetch()
+    }
+    
+    func didSelectItem(at index: Int) {
+        onSelect?(contents[index])
     }
     
     func fetch() {

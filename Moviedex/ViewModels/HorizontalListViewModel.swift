@@ -15,6 +15,7 @@ class HorizontalListViewModel {
     private var page: Int = 1
     private var term: String = "Comedy"
     
+    var onSelect: ((Content) -> Void)?
     var onChanged: (() -> Void)?
     
     var contents: [Content]
@@ -24,9 +25,13 @@ class HorizontalListViewModel {
         self.contents = contents
     }
     
-    func viewWillShowItem(at index: Int) {
+    func willShowItem(at index: Int) {
         guard index == contents.count - 8 else { return }
         fetch()
+    }
+    
+    func didSelectItem(at index: Int) {
+        onSelect?(contents[index])
     }
     
     func fetch() {

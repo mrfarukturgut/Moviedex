@@ -14,6 +14,7 @@ class VerticalListView: UIView {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.showsVerticalScrollIndicator = false
+        tableView.separatorStyle = .none
         tableView.register(cell: VerticalListItemCell.self)
         return tableView
     }()
@@ -64,11 +65,15 @@ extension VerticalListView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        viewModel.viewWillShowItem(at: indexPath.row)
+        viewModel.willShowItem(at: indexPath.row)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.didSelectItem(at: indexPath.row)
     }
     
 }

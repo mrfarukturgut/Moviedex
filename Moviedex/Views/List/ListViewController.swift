@@ -19,16 +19,18 @@ class ListViewController: UIViewController {
         view = listView
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        navigationController?.setNavigationBarHidden(true, animated: false)
+        navigationController?.navigationBar.isTranslucent = false
+        
+        setupEvents()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        navigationController?.setNavigationBarHidden(false, animated: false)
+    private func setupEvents() {
+        listViewModel.onSelect = { [weak self] viewModel in
+            let detailController = DetailViewController(viewModel: viewModel)
+            self?.navigationController?.pushViewController(detailController, animated: true)
+        }
     }
-
 }
