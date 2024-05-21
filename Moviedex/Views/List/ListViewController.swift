@@ -22,7 +22,7 @@ class ListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.navigationBar.isTranslucent = false
+        title = "List"
         
         setupEvents()
     }

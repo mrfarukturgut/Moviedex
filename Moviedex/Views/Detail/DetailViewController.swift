@@ -26,4 +26,10 @@ class DetailViewController: UIViewController {
         view = detailView
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        title = "Detail"
+    }
+    
 }

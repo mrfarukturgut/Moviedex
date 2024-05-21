@@ -58,7 +58,7 @@ class DetailView: UIView {
         addSubview(stackView)
         
         stackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(24)
+            make.edges.equalTo(safeAreaLayoutGuide.snp.edges).inset(24)
         }
         
         stackView.addArrangedSubview(posterView)
