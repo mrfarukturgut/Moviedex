@@ -41,16 +41,16 @@ class ListView: UIView {
             make.top.equalTo(safeAreaLayoutGuide.snp.top).inset(8)
         }
         
-        horizontalListView.snp.makeConstraints { make in
-            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom)
-            make.horizontalEdges.equalToSuperview()
-            make.height.equalTo(176)
-        }
-        
         verticalListView.snp.makeConstraints { make in
             make.top.equalTo(searchView.snp.bottom).offset(8)
             make.horizontalEdges.equalToSuperview()
             make.bottom.equalTo(horizontalListView.snp.top)
+        }
+        
+        horizontalListView.snp.makeConstraints { make in
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).inset(8)
+            make.horizontalEdges.equalToSuperview().inset(24)
+            make.height.equalTo(176)
         }
     }
     

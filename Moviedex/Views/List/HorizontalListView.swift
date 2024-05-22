@@ -18,6 +18,7 @@ class HorizontalListView: UIView {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.layer.cornerRadius = 8
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.contentInset = .init(top: 8, left: 8, bottom: 8, right: 8)
         collectionView.register(cell: HorizontalListItemCell.self)
@@ -42,6 +43,11 @@ class HorizontalListView: UIView {
     
     private func commonInit() {
         backgroundColor = .white
+        
+        layer.cornerRadius = 8
+        clipsToBounds = true
+        
+        applyShadow()
         
         viewModel.onChanged = { [weak self] in
             self?.collectionView.reloadData()

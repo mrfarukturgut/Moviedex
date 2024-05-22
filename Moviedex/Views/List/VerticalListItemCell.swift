@@ -9,6 +9,15 @@ import UIKit
 
 class VerticalListItemCell: UITableViewCell, Reusable {
     
+    private lazy var containerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        view.layer.cornerRadius = 8
+        view.layer.masksToBounds = true
+        view.applyShadow()
+        return view
+    }()
+    
     private lazy var posterView: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
@@ -70,7 +79,15 @@ class VerticalListItemCell: UITableViewCell, Reusable {
     }
     
     private func setupSubviews() {
-        contentView.addSubviews(posterView, labelStackView)
+        
+        contentView.addSubview(containerView)
+        
+        containerView.snp.makeConstraints { make in
+            make.horizontalEdges.equalToSuperview().inset(24)
+            make.verticalEdges.equalToSuperview().inset(4)
+        }
+        
+        containerView.addSubviews(posterView, labelStackView)
         
         posterView.snp.makeConstraints { make in
             make.height.equalTo(80)

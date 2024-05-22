@@ -21,8 +21,6 @@ class SearchView: UIView {
         return field
     }()
     
-    
-    
     private let viewModel: SearchViewModel
     
     init(viewModel: SearchViewModel) {
@@ -37,6 +35,13 @@ class SearchView: UIView {
     }
     
     private func commonInit() {
+        backgroundColor = .white
+        
+        layer.cornerRadius = 8
+        layer.masksToBounds = true
+        
+        applyShadow()
+                
         setupSubviews()
         
         searchField.text = viewModel.term
