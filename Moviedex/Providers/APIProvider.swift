@@ -40,11 +40,27 @@ class APIProvider: Provider {
         let task = session.dataTask(with: request) { data, response, error in
             
             let decoder = JSONDecoder()
-            let data = try! decoder.decode(Search.self, from: data!)
             
-            completion(.success(data))
+            guard let data = data, let decoded = try? decoder.decode(Search.self, from: data), decoded.response else {
+                let error = APIError(message: "Something went wrong with the HTTP request.")
+                completion(.failure(error))
+                return
+            }
+            
+            guard decoded.response else {
+                let error = APIError(message: decoded.error ?? "Something went wrong with the HTTP request.")
+                completion(.failure(error))
+                return
+            }
+            
+            completion(.success(decoded))
+            
         }
         
         task.resume()
     }
+}
+
+struct APIError: Error {
+    let message: String
 }

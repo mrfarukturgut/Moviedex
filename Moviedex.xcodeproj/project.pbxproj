@@ -116,11 +116,11 @@
 		EBE54D5A2BF6BF3000D0C696 /* Moviedex */ = {
 			isa = PBXGroup;
 			children = (
-				EBE54DAD2BFCD81700D0C696 /* Components */,
-				EBE54D9A2BF77F9E00D0C696 /* Provider */,
-				EBE54D762BF6C40E00D0C696 /* Utils */,
+				EBE54D9A2BF77F9E00D0C696 /* Providers */,
 				EBE54D722BF6C19500D0C696 /* Modules */,
 				EBE54D862BF77C4F00D0C696 /* Models */,
+				EBE54DAD2BFCD81700D0C696 /* Components */,
+				EBE54D762BF6C40E00D0C696 /* Utils */,
 				EBE54D5B2BF6BF3000D0C696 /* AppDelegate.swift */,
 				EBE54D642BF6BF3100D0C696 /* Assets.xcassets */,
 				EBE54D662BF6BF3100D0C696 /* LaunchScreen.storyboard */,
@@ -165,10 +165,10 @@
 		EBE54D772BF6C41800D0C696 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				EBE54D782BF6C42800D0C696 /* UIView+Extensions.swift */,
 				EBE54D812BF7610300D0C696 /* UICollectionView+Reusable.swift */,
-				EBE54D832BF7618F00D0C696 /* UITableView+Reusable.swift */,
 				EBE54DC62BFE157300D0C696 /* UIImageView+ImageLoader.swift */,
+				EBE54D832BF7618F00D0C696 /* UITableView+Reusable.swift */,
+				EBE54D782BF6C42800D0C696 /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -190,12 +190,12 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		EBE54D9A2BF77F9E00D0C696 /* Provider */ = {
+		EBE54D9A2BF77F9E00D0C696 /* Providers */ = {
 			isa = PBXGroup;
 			children = (
 				EBE54D9B2BF77FA700D0C696 /* APIProvider.swift */,
 			);
-			path = Provider;
+			path = Providers;
 			sourceTree = "<group>";
 		};
 		EBE54D9F2BF96E0800D0C696 /* PropertyWrappers */ = {
