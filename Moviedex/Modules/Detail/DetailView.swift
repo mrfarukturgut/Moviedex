@@ -50,10 +50,7 @@ class DetailView: UIView {
         setupSubviews()
         
         titleLabel.text = viewModel.title
-        
-        viewModel.image { [weak self] image in
-            self?.posterView.image = image
-        }
+        posterView.loadImage(at: viewModel.imageUrl)
     }
     
     private func setupSubviews() {

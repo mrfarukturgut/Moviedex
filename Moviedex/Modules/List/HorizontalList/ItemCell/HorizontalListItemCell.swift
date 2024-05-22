@@ -30,12 +30,11 @@ class HorizontalListItemCell: UICollectionViewCell, Reusable {
         super.prepareForReuse()
         
         posterView.image = nil
+        posterView.cancelImageLoad()
     }
     
     func update(with viewModel: HorizontalListItemCellModel) {
-        viewModel.image { [weak self] image in
-            self?.posterView.image = image
-        }
+        posterView.loadImage(at: viewModel.imageUrl)
     }
     
     private func commonInit() {

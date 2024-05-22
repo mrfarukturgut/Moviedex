@@ -11,18 +11,12 @@ struct HorizontalListItemCellModel {
     
     private let content: Content
     
+    var imageUrl: URL {
+        content.poster
+    }
+    
     init(content: Content) {
         self.content = content
     }
     
-    func image(completion: @escaping (UIImage) -> Void) {
-        ImageCacher.image(for: content.poster) { result in
-            switch result {
-            case .success(let image):
-                completion(image)
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
 }

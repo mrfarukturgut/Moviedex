@@ -11,7 +11,7 @@ struct Content: Decodable {
     let id: String
     let title: String
     let year: String
-    let poster: String
+    let poster: URL
     
     enum CodingKeys: String, CodingKey {
         case id = "imdbID"

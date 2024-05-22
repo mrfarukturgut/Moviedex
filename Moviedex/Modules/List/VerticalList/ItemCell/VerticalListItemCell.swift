@@ -61,15 +61,13 @@ class VerticalListItemCell: UITableViewCell, Reusable {
         super.prepareForReuse()
         
         posterView.image = nil
+        posterView.cancelImageLoad()
     }
     
     func update(with viewModel: VerticalListItemCellModel) {
         titleLabel.text = viewModel.title
         releaseDateLabel.text = viewModel.releaseDate
-        
-        viewModel.image { [weak self] image in
-            self?.posterView.image = image
-        }
+        posterView.loadImage(at: viewModel.imageUrl)
     }
     
     private func commonInit() {

@@ -15,18 +15,11 @@ class DetailViewModel {
         content.title
     }
     
-    init(content: Content) {
-        self.content = content
+    var imageUrl: URL {
+        content.poster
     }
     
-    func image(completion: @escaping (UIImage) -> Void) {
-        ImageCacher.image(for: content.poster) { result in
-            switch result {
-            case .success(let image):
-                completion(image)
-            case .failure(let error):
-                print(error)
-            }
-        }
+    init(content: Content) {
+        self.content = content
     }
 }
