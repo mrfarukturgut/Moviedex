@@ -14,6 +14,7 @@ class HorizontalListViewModel {
     private let provider: Provider
     private var page: Int = 1
     private var term: String = "Comedy"
+    private var hasMoreContent: Bool = true
     
     var onSelect: ((Content) -> Void)?
     var onChanged: (() -> Void)?
@@ -26,7 +27,7 @@ class HorizontalListViewModel {
     }
     
     func willShowItem(at index: Int) {
-        guard index == contents.count - 4 else { return }
+        guard index == contents.count - 4, hasMoreContent else { return }
         fetch()
     }
     
@@ -38,10 +39,18 @@ class HorizontalListViewModel {
         provider.search(by: term, page: page) { [weak self] result in
             switch result {
             case let .success(response):
+                guard response.search.count > 0 else {
+                    self?.hasMoreContent = false
+                    return
+                }
+                
                 self?.update(contents: response.search)
                 self?.page += 1
+                
                 completion(nil)
             case let .failure(error):
+                self?.update(contents: [])
+                
                 completion(error)
             }
         }
